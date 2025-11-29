@@ -54,19 +54,13 @@ export default function HomePage() {
 
       {/* rest of page in container */}
       <div className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-6 lg:px-8">
-        <motion.section
-          className="mt-16"
-          id="contact"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <ContactSection
-            submitted={submitted}
-            onSubmit={handleWaitlistSubmit}
-          />
-        </motion.section>
+      <motion.section
+  id="contact"
+  // ...other props
+>
+  <ContactSection />
+</motion.section>
+
 
         <motion.section
           className="mt-16"
@@ -674,8 +668,6 @@ function ContactSection() {
     const subject = "New project inquiry for GTS Media House";
 
     const body = `
-Hey Josh,
-
 I want to talk about a project.
 
 Name: ${name}
