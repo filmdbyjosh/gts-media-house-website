@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Jumbox";
+  src: url("/fonts/Jumbox.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-brandBg text-textMain antialiased font-body;
+}
+
+::selection {
+  background: #00b8ff33;
+}
+@keyframes lineFade {
+  0% {
+    opacity: .15;
+  }
+  50% {
+    opacity: .45;
+  }
+  100% {
+    opacity: .15;
+  }
+}
+
+.animate-line-fade {
+  animation: lineFade 2.4s ease-in-out infinite;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typeCursorBlink {
+  0%,100% { border-color: rgba(148, 163, 184, 0);
+  }
+  50% {
+    border-color: rgba(148, 163, 184, 0.9);
+  }
+}
+
+.typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid rgba(148, 163, 184, 0.9);
+  animation: typewriter 1.8s steps(32, end) 0.2s forwards,
+    typeCursorBlink 0.9s step-end infinite;
+
+  /* NEW LINE: stops typing EXACTLY at the "?" */
+  max-width: 265px; 
+}
