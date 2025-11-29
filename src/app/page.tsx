@@ -49,31 +49,28 @@ export default function HomePage() {
       {/* production vs freelance (inside container) */}
       <ProductionSection />
 
-      {/* full bleed process section */}
-      <ProductionProcessSection />
+{/* full bleed process section */}
+<ProductionProcessSection />
 
-      {/* rest of page in container */}
-      <div className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-6 lg:px-8">
-      <motion.section
-  id="contact"
-  // ...other props
->
+{/* rest of page in container */}
+<div className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-6 lg:px-8">
+  {/* CONTACT SECTION */}
   <ContactSection />
-</motion.section>
 
+  {/* FOUNDER SECTION */}
+  <motion.section
+    className="mt-16"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.35 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+  >
+    <FounderSection />
+  </motion.section>
 
-        <motion.section
-          className="mt-16"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <FounderSection />
-        </motion.section>
+  <Footer />
+</div>
 
-        <Footer />
-      </div>
     </main>
   );
 }
