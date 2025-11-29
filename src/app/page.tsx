@@ -19,12 +19,8 @@ const TypingEyebrow = dynamic(() => import("../components/TypingEyebrow"), {
 
 
 export default function HomePage() {
-  const [submitted, setSubmitted] = useState(false);
+<ContactSection />
 
-  const handleWaitlistSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   return (
     <main className="relative bg-brandBg text-textMain">
