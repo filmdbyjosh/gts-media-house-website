@@ -102,8 +102,38 @@ function Hero() {
 
         <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center gap-1 px-4 py-6 text-center sm:px-6 lg:px-8">
 
-  {/* logo */}
-  <div className="flex justify-center mb-2">
+  {/* eyebrow */}
+  <div className="flex items-center justify-center gap-2 text-[11px] font-heading uppercase tracking-[0.25em] text-white/80">
+    <span className="h-px w-4 bg-white/30 animate-line-fade" />
+    <span>Motion Creates Emotion</span>
+    <span className="h-px w-4 bg-white/30 animate-line-fade" />
+  </div>
+
+  {/* headline + subline */}
+  <div className="space-y-4 max-w-4xl mx-auto mt-4 text-center">
+    <h1 className="text-balance font-heading font-bold tracking-tight leading-[1.05] text-3xl sm:text-5xl lg:text-[3.5rem]">
+      Dynamic brand visuals inspired by
+    </h1>
+    <p className="text-balance font-heading font-semibold tracking-[0.35em] text-xs sm:text-sm lg:text-base uppercase text-white/90">
+      LIFESTYLE&nbsp; | &nbsp;ENERGY&nbsp; | &nbsp;CULTURE
+    </p>
+  </div>
+
+  {/* CTA + subtext */}
+  <div className="flex flex-wrap items-center justify-center gap-4">
+    <a
+      href="#contact"
+      className="rounded-full bg-brandWhite px-7 py-2.5 text-sm font-semibold text-brandBlack transition hover:bg-[#e5e5e5]"
+    >
+      Connect With Us
+    </a>
+    <p className="text-xs text-white/85">
+      Premium visual storytelling for brands that want to stand out.
+    </p>
+  </div>
+
+  {/* logo at the bottom */}
+  <div className="flex justify-center mt-4">
     <Image
       src="/gts-main-logo.png"
       alt="GTS Media House Logo"
@@ -114,36 +144,8 @@ function Hero() {
     />
   </div>
 
-  {/* eyebrow */}
-  <div className="flex items-center justify-center gap-2 text-[11px] font-heading uppercase tracking-[0.25em] text-white/80">
-    <span className="h-px w-4 bg-white/30 animate-line-fade" />
-    <span>Motion Creates Emotion</span>
-    <span className="h-px w-4 bg-white/30 animate-line-fade" />
-  </div>
+</div>
 
-          {/* headline + subline */}
-          <div className="space-y-4 max-w-4xl mx-auto mt-4 text-center">
-            <h1 className="text-balance font-heading font-bold tracking-tight leading-[1.05] text-3xl sm:text-5xl lg:text-[3.5rem]">
-              Dynamic brand visuals inspired by
-            </h1>
-            <p className="text-balance font-heading font-semibold tracking-[0.35em] text-xs sm:text-sm lg:text-base uppercase text-white/90">
-              LIFESTYLE&nbsp; | &nbsp;ENERGY&nbsp; | &nbsp;CULTURE
-            </p>
-          </div>
-
-          {/* CTA + subtext */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#contact"
-              className="rounded-full bg-brandWhite px-7 py-2.5 text-sm font-semibold text-brandBlack transition hover:bg-[#e5e5e5]"
-            >
-              Connect With Us
-            </a>
-            <p className="text-xs text-white/85">
-              Premium visual storytelling for brands that want to stand out.
-            </p>
-          </div>
-        </div>
 
         {/* scroll hint */}
         <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 text-[11px] text-white/80">
