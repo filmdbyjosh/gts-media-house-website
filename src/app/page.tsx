@@ -100,16 +100,16 @@ function Hero() {
           <div className="absolute inset-y-0 left-1/2 w-px bg-white/18" />
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center gap-8 px-4 py-16 text-center sm:px-6 lg:px-8">
+        <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center gap-8 px-4 py-6 text-center sm:px-6 lg:px-8">
 
   {/* logo */}
   <div className="flex justify-center mb-2">
     <Image
       src="/gts-main-logo.png"
       alt="GTS Media House Logo"
-      width={800}
-      height={800}
-      className="w-auto h-48"
+      width={1600}
+      height={1600}
+      className="w-auto h-96"
       priority
     />
   </div>
