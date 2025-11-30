@@ -5,6 +5,11 @@ import CustomCursor from "@/components/CustomCursor";
 export const metadata: Metadata = {
   title: "GTS Media House",
   description: "Cinematic production for brands",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -21,5 +26,6 @@ export default function RootLayout({
     </html>
   );
 }
+
 
 

@@ -7,66 +7,58 @@ import React, {
   useState,
   useRef,
 } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { SkeletonCameraIcon } from "../components/SkeletonCameraIcon";
-import dynamic from "next/dynamic";
 
-const TypingEyebrow = dynamic(() => import("../components/TypingEyebrow"), {
-  ssr: false,
-});
-
-
+/* MAIN PAGE */
 
 export default function HomePage() {
-<ContactSection />
-
-
   return (
     <main className="relative bg-brandBg text-textMain">
       <CustomCursor />
+    
+
+      {/* HERO VIDEO STRIP */}
+      <section className="relative h-[33vh] w-full overflow-hidden">
+        <video
+          src="/hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </section>
       <SkeletonCameraIcon />
 
-     {/* HERO VIDEO STRIP */}
-<section className="relative h-[33vh] w-full overflow-hidden">
-  <video
-    src="/hero.mp4"
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="absolute inset-0 h-full w-full object-cover"
-  />
-</section>
 
-{/* electric blue hero section */}
-<Hero />
+      {/* electric blue hero section */}
+      <Hero />
 
       {/* production vs freelance (inside container) */}
       <ProductionSection />
 
-{/* full bleed process section */}
-<ProductionProcessSection />
+      {/* full bleed process section */}
+      <ProductionProcessSection />
 
-{/* rest of page in container */}
-<div className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-6 lg:px-8">
-  {/* CONTACT SECTION */}
-  <ContactSection />
+      {/* rest of page in container */}
+      <div className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-6 lg:px-8">
+        {/* CONTACT SECTION */}
+        <ContactSection />
 
-  {/* FOUNDER SECTION */}
-  <motion.section
-    className="mt-16"
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, amount: 0.35 }}
-    transition={{ duration: 0.6, ease: "easeOut" }}
-  >
-    <FounderSection />
-  </motion.section>
+        {/* FOUNDER SECTION */}
+        <motion.section
+          className="mt-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <FounderSection />
+        </motion.section>
 
-  <Footer />
-</div>
-
+        <Footer />
+      </div>
     </main>
   );
 }
@@ -89,16 +81,14 @@ function Hero() {
       onMouseMove={handleMouseMove}
       className="relative left-1/2 w-screen -translate-x-1/2"
     >
-{/* banner strip under hero video */}
-<div className="w-full border-y border-white bg-black">
-  <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6 lg:px-8">
-    <p className="text-center text-[11px] font-heading font-semibold uppercase tracking-[0.25em] text-electricBlue">
-      Elevate your brand with visuals that match its ambition.
-    </p>
-  </div>
-</div>
-
-
+      {/* banner strip under hero video */}
+      <div className="w-full border-y border-white bg-black">
+        <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6 lg:px-8">
+          <p className="text-center text-[11px] font-heading font-semibold uppercase tracking-[0.25em] text-electricBlue">
+            Elevate your brand with visuals that match its ambition.
+          </p>
+        </div>
+      </div>
 
       <div className="relative flex min-h-screen w-full items-center justify-center bg-electricBlue text-brandWhite">
         {/* glow + divider */}
@@ -109,25 +99,22 @@ function Hero() {
         </div>
 
         <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center gap-8 px-4 py-16 text-center sm:px-6 lg:px-8">
-{/* eyebrow */}
-<div className="flex items-center justify-center gap-2 text-[11px] font-heading uppercase tracking-[0.25em] text-white/80">
-  <span className="h-px w-4 bg-white/30 animate-line-fade" />
-  <span>Motion Creates Emotion</span>
-  <span className="h-px w-4 bg-white/30 animate-line-fade" />
-</div>
+          {/* eyebrow */}
+          <div className="flex items-center justify-center gap-2 text-[11px] font-heading uppercase tracking-[0.25em] text-white/80">
+            <span className="h-px w-4 bg-white/30 animate-line-fade" />
+            <span>Motion Creates Emotion</span>
+            <span className="h-px w-4 bg-white/30 animate-line-fade" />
+          </div>
 
-{/* headline */}
-<div className="space-y-4 max-w-4xl mx-auto mt-4 text-center">
-  <h1 className="text-balance font-heading font-bold tracking-tight leading-[1.05] text-3xl sm:text-5xl lg:text-[3.5rem]">
-    Dynamic brand visuals inspired by
-  </h1>
-  <p className="text-balance font-heading font-semibold tracking-[0.35em] text-xs sm:text-sm lg:text-base uppercase text-white/90">
-    LIFESTYLE&nbsp; | &nbsp;ENERGY&nbsp; | &nbsp;CULTURE
-  </p>
-</div>
-
-
-
+          {/* headline + subline */}
+          <div className="space-y-4 max-w-4xl mx-auto mt-4 text-center">
+            <h1 className="text-balance font-heading font-bold tracking-tight leading-[1.05] text-3xl sm:text-5xl lg:text-[3.5rem]">
+              Dynamic brand visuals inspired by
+            </h1>
+            <p className="text-balance font-heading font-semibold tracking-[0.35em] text-xs sm:text-sm lg:text-base uppercase text-white/90">
+              LIFESTYLE&nbsp; | &nbsp;ENERGY&nbsp; | &nbsp;CULTURE
+            </p>
+          </div>
 
           {/* CTA + subtext */}
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -153,14 +140,13 @@ function Hero() {
   );
 }
 
-
 /* PRODUCTION COMPANY VS FREELANCE */
 
 function ProductionSection() {
   return (
     <section className="px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-16">
-        {/* Top: eyebrow (typing), big left headline, right subtext, negative space */}
+        {/* Top: eyebrow, headline, subtext */}
         <motion.div
           className="relative pb-12"
           initial={{ opacity: 0, y: 30 }}
@@ -171,18 +157,14 @@ function ProductionSection() {
           {/* subtle gradient blob */}
           <div className="pointer-events-none absolute -top-12 right-[-80px] h-40 w-40 rounded-full bg-electricBlue/10 blur-3xl" />
 
-          {/* eyebrow with typing effect */}
           <div className="text-center">
             <p className="typewriter text-[11px] font-heading font-semibold uppercase tracking-[0.25em] text-textMuted">
               What&apos;s the right pick for you?
             </p>
           </div>
 
-          {/* headline + subtext */}
           <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-end">
-            {/* Left: headline with vertical line accent */}
             <div className="flex items-start gap-4">
-              {/* vertical line accent */}
               <span className="hidden h-20 w-px bg-borderSoft lg:block" />
               <motion.h2
                 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold tracking-tight leading-tight text-textMain"
@@ -200,7 +182,6 @@ function ProductionSection() {
               </motion.h2>
             </div>
 
-            {/* Right: subtext */}
             <motion.p
               className="mt-4 max-w-md text-base sm:text-lg font-medium text-textMuted lg:ml-auto lg:text-right"
               whileHover={{ scale: 1.01 }}
@@ -213,7 +194,7 @@ function ProductionSection() {
           </div>
         </motion.div>
 
-        {/* Row 1: production company box (left) + paragraph (right) */}
+        {/* Row 1: production company card + paragraph */}
         <motion.div
           className="grid gap-10 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1.1fr)] lg:items-center"
           initial={{ opacity: 0, y: 40 }}
@@ -221,7 +202,6 @@ function ProductionSection() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
         >
-          {/* Production company box */}
           <motion.div className="group relative rounded-3xl border border-borderSoft bg-brandWhite px-6 py-7 shadow-cardSm transition-all duration-300 hover:-translate-y-3 hover:scale-[1.02] hover:bg-electricBlue hover:border-white/20 hover:shadow-[0_22px_70px_rgba(0,0,0,0.6)]">
             <p className="text-[11px] font-heading font-semibold uppercase tracking-[0.25em] text-textMuted group-hover:text-white/80">
               Production company
@@ -274,7 +254,6 @@ function ProductionSection() {
             </div>
           </motion.div>
 
-          {/* Production company paragraph */}
           <motion.div
             className="flex items-center"
             initial={{ opacity: 0, y: 25 }}
@@ -293,7 +272,7 @@ function ProductionSection() {
           </motion.div>
         </motion.div>
 
-        {/* Freelance cue + arrow on the right */}
+        {/* Freelance cue */}
         <motion.div
           className="flex justify-end"
           initial={{ opacity: 0, y: 20 }}
@@ -309,7 +288,7 @@ function ProductionSection() {
           </div>
         </motion.div>
 
-        {/* Row 2: flipped – paragraph left, box right */}
+        {/* Row 2: freelance paragraph + card */}
         <motion.div
           className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.7fr)] lg:items-center"
           initial={{ opacity: 0, y: 40 }}
@@ -317,7 +296,6 @@ function ProductionSection() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          {/* Freelance paragraph on the left */}
           <motion.div
             className="flex items-center"
             initial={{ opacity: 0, y: 25 }}
@@ -334,7 +312,6 @@ function ProductionSection() {
             </p>
           </motion.div>
 
-          {/* Freelance video guy box */}
           <motion.div className="group relative rounded-3xl border border-borderSoft bg-brandWhite px-6 py-7 shadow-cardSm transition-all duration-300 hover:-translate-y-3 hover:scale-[1.02] hover:bg-electricBlue hover:border-white/20 hover:shadow-[0_22px_70px_rgba(0,0,0,0.6)]">
             <p className="text-[11px] font-heading font-semibold uppercase tracking-[0.25em] text-textMuted group-hover:text-white/80">
               Freelance video guy
@@ -458,7 +435,7 @@ function ProductionProcessSection() {
             className="max-w-3xl"
           >
             <p className="text-[11px] font-heading font-semibold uppercase tracking-[0.25em] text-electricBlue">
-            The Essential Guide | Video Production
+              The Essential Guide | Video Production
             </p>
 
             <h2 className="mt-3 text-2xl font-heading font-bold tracking-tight sm:text-3xl lg:text-4xl">
@@ -478,6 +455,7 @@ function ProductionProcessSection() {
 
           {/* Stages */}
           <div className="mt-12 space-y-12 border-t border-borderSoft pt-10">
+            {/* 01 Development */}
             <motion.article
               initial={{ opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -501,6 +479,7 @@ function ProductionProcessSection() {
               </p>
             </motion.article>
 
+            {/* 02 Pre production */}
             <motion.article
               initial={{ opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -523,6 +502,7 @@ function ProductionProcessSection() {
               </p>
             </motion.article>
 
+            {/* 03 Production */}
             <motion.article
               initial={{ opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -547,6 +527,7 @@ function ProductionProcessSection() {
               </p>
             </motion.article>
 
+            {/* 04 Post production */}
             <motion.article
               initial={{ opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -570,6 +551,7 @@ function ProductionProcessSection() {
               </p>
             </motion.article>
 
+            {/* 05 Delivery */}
             <motion.article
               initial={{ opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -593,6 +575,7 @@ function ProductionProcessSection() {
               </p>
             </motion.article>
 
+            {/* How it shifts */}
             <motion.article
               initial={{ opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -616,6 +599,7 @@ function ProductionProcessSection() {
               </p>
             </motion.article>
 
+            {/* Professional productions */}
             <motion.article
               initial={{ opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -624,16 +608,17 @@ function ProductionProcessSection() {
               className="max-w-3xl border-t border-borderSoft pt-10"
             >
               <h3 className="text-sm font-heading font-semibold uppercase tracking-[0.2em] text-textMuted">
-              Professional Video Productions stands alone
+                Professional Video Productions stands alone
               </h3>
               <p className="mt-3 text-sm text-textMuted">
-                The real difference between hiring a freelancer and partnering with a production company is structure. A
-                production team runs on specialists, systems, and a tested
-                process. Each stage is handled by someone who lives in that part
-                of the workflow every day instead of one person guessing their
-                way through several jobs at once. That is why the experience
-                feels smoother, the visuals look cleaner, and the final piece
-                lands harder with the people you are trying to reach.
+                The real difference between hiring a freelancer and partnering
+                with a production company is structure. A production team runs
+                on specialists, systems, and a tested process. Each stage is
+                handled by someone who lives in that part of the workflow every
+                day instead of one person guessing their way through several
+                jobs at once. That is why the experience feels smoother, the
+                visuals look cleaner, and the final piece lands harder with the
+                people you are trying to reach.
               </p>
             </motion.article>
           </div>
@@ -646,7 +631,7 @@ function ProductionProcessSection() {
 /* CONTACT FORM */
 
 function ContactSection() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const form = e.currentTarget;
@@ -674,9 +659,7 @@ ${project}
       subject
     )}&body=${encodeURIComponent(body)}`;
 
-    // opens the user's email app with everything filled in
     window.location.href = mailtoLink;
-
     form.reset();
   };
 
@@ -690,16 +673,15 @@ ${project}
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:flex-row sm:items-start sm:justify-between sm:px-6 lg:px-8">
         {/* LEFT: text */}
-<div className="max-w-xl">
-  <p className="text-[11px] font-heading font-semibold uppercase tracking-[0.25em] text-black/60">
-    Connect
-  </p>
+        <div className="max-w-xl">
+          <p className="text-[11px] font-heading font-semibold uppercase tracking-[0.25em] text-black/60">
+            Connect
+          </p>
 
-  <h2 className="mt-2 text-3xl font-heading font-bold tracking-tight sm:text-4xl">
-    Want to create something cinematic? Just say hello.
-  </h2>
-</div>
-
+          <h2 className="mt-2 text-3xl font-heading font-bold tracking-tight sm:text-4xl">
+            Want to create something cinematic? Just say hello.
+          </h2>
+        </div>
 
         {/* RIGHT: form */}
         <form
@@ -757,9 +739,6 @@ ${project}
   );
 }
 
-
-
-
 /* FOUNDER */
 
 function FounderSection() {
@@ -771,7 +750,6 @@ function FounderSection() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.22),_transparent_65%)]" />
 
       <div className="relative mx-auto flex max-w-7xl min-h-screen flex-col items-center gap-10 px-4 py-20 sm:px-6 lg:flex-row lg:items-center lg:gap-20 lg:px-8 lg:py-24">
-        
         {/* LEFT: text */}
         <motion.div
           className="flex-1 flex items-center"
@@ -818,18 +796,12 @@ function FounderSection() {
           </div>
         </motion.div>
 
-        {/* RIGHT: removed — leaving empty space to balance layout */}
+        {/* RIGHT: empty space for balance */}
         <div className="flex-1 hidden lg:block" />
       </div>
     </section>
   );
 }
-
-
-
-
-
-
 
 /* FOOTER */
 
