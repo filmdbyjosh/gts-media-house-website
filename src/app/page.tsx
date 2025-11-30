@@ -100,7 +100,7 @@ function Hero() {
           <div className="absolute inset-y-0 left-1/2 w-px bg-white/18" />
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center gap-8 px-4 py-6 text-center sm:px-6 lg:px-8">
+        <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center gap-3 px-4 py-6 text-center sm:px-6 lg:px-8">
 
   {/* logo */}
   <div className="flex justify-center mb-2">
