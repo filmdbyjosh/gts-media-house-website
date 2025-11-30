@@ -107,9 +107,9 @@ function Hero() {
     <Image
       src="/gts-main-logo.png"
       alt="GTS Media House Logo"
-      width={140}
-      height={140}
-      className="w-auto h-14"
+      width={800}
+      height={800}
+      className="w-auto h-48"
       priority
     />
   </div>
