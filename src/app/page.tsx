@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <main className="relative bg-brandBg text-textMain">
       <CustomCursor />
-      <SkeletonCameraIcon />
+    
 
       {/* HERO VIDEO STRIP */}
       <section className="relative h-[33vh] w-full overflow-hidden">
@@ -29,6 +29,20 @@ export default function HomePage() {
           className="absolute inset-0 h-full w-full object-cover"
         />
       </section>
+      <SkeletonCameraIcon />
+
+{/* HERO VIDEO STRIP */}
+<section className="relative h-[33vh] w-full overflow-hidden">
+  <video
+    src="/hero.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 h-full w-full object-cover"
+  />
+</section>
+
 
       {/* electric blue hero section */}
       <Hero />
