@@ -100,12 +100,25 @@ function Hero() {
         </div>
 
         <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center gap-8 px-4 py-16 text-center sm:px-6 lg:px-8">
-          {/* eyebrow */}
-          <div className="flex items-center justify-center gap-2 text-[11px] font-heading uppercase tracking-[0.25em] text-white/80">
-            <span className="h-px w-4 bg-white/30 animate-line-fade" />
-            <span>Motion Creates Emotion</span>
-            <span className="h-px w-4 bg-white/30 animate-line-fade" />
-          </div>
+
+  {/* logo */}
+  <div className="flex justify-center mb-2">
+    <Image
+      src="/gts-main-logo.png"
+      alt="GTS Media House Logo"
+      width={140}
+      height={140}
+      className="w-auto h-14"
+      priority
+    />
+  </div>
+
+  {/* eyebrow */}
+  <div className="flex items-center justify-center gap-2 text-[11px] font-heading uppercase tracking-[0.25em] text-white/80">
+    <span className="h-px w-4 bg-white/30 animate-line-fade" />
+    <span>Motion Creates Emotion</span>
+    <span className="h-px w-4 bg-white/30 animate-line-fade" />
+  </div>
 
           {/* headline + subline */}
           <div className="space-y-4 max-w-4xl mx-auto mt-4 text-center">
