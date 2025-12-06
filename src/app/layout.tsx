@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "GTS Media House",
@@ -22,10 +23,12 @@ export default function RootLayout({
       <body className="bg-brandBg text-white cursor-none">
         <CustomCursor />
         {children}
+        <Analytics />
       </body>
     </html>
   );
 }
+
 
 
 
