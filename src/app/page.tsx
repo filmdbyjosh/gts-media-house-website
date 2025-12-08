@@ -675,9 +675,10 @@ ${project}
     const mailtoLink = `mailto:info@gtsmediahouse.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
-    
+
     window.location.href = mailtoLink;
-    form.reset();    
+    form.reset();
+  }; // <-- THIS was missing
 
   return (
     <section
@@ -754,6 +755,7 @@ ${project}
     </section>
   );
 }
+
 
 /* FOUNDER */
 
