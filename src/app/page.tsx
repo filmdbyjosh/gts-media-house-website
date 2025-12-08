@@ -672,13 +672,12 @@ Project details:
 ${project}
     `;
 
-    const mailtoLink = `mailto:gtsmediahouse@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:info@gtsmediahouse.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
-
+    
     window.location.href = mailtoLink;
-    form.reset();
-  };
+    form.reset();    
 
   return (
     <section
