@@ -4,9 +4,9 @@ import CustomCursor from "@/components/CustomCursor";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "High-Performance Paid Ads Strategy | GTS Media House",
+  title: "High-Performance Ad Strategy | GTS Media House",
   description:
-    "Strategic paid advertising management and high-performing ad creative for growing brands. GTS Media House helps businesses scale social media ad campaigns with better strategy and better content.",
+    "Strategic high-performing ad creative and strategy for growing brands. GTS Media House helps businesses scale social media ad campaigns with better strategy and better content.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
