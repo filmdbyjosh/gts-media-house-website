@@ -12,6 +12,21 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
+
+  openGraph: {
+    title: "High-Performance Ad Strategy | GTS Media House",
+    description:
+      "Strategic high-performing ad creative and strategy for growing brands.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "GTS Media House Ad Strategy",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
