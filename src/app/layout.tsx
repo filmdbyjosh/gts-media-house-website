@@ -4,7 +4,7 @@ import CustomCursor from "@/components/CustomCursor";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "High-Performance Ad Strategy | GTS Media House",
+  title: "High-Performance Ads | GTS Media House",
   description:
     "Strategic high-performing ad creative and strategy for brands. GTS Media House helps businesses scale social media ad campaigns with better strategy and better content.",
   icons: {
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "High-Performance Ad Strategy | GTS Media House",
+    title: "High-Performance Ads | GTS Media House",
     description:
-      "Strategic high-performing ad creative and strategy for growing brands.",
+      "Strategic high-performing ad creative and strategy for brands. GTS Media House helps businesses scale social media ad campaigns with better strategy and better content.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "GTS Media House Ad Strategy",
+        alt: "GTS Media House High-Performance Ads",
       },
     ],
     type: "website",
@@ -44,6 +44,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
-
