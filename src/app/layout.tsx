@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "GTS Media House High-Performance Ads",
+        alt: "GTS Media House | Brand Development & Marketing Systems",
       },
     ],
     type: "website",
@@ -37,6 +37,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-brandBg text-white cursor-none">
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "GTS Media House",
+      url: "https://gtsmediahouse.com",
+      sameAs: [
+        "https://instagram.com/gtsmediahouse"
+      ],
+    }),
+  }}
+/>
         <CustomCursor />
         {children}
         <Analytics />
