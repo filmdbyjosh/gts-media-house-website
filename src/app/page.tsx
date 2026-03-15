@@ -62,10 +62,6 @@ export default function HomePage() {
   Built to Scale
 </h1>
 
-<p className="mt-8 max-w-xl text-base leading-8 text-white/70 sm:text-lg">
-GTS Media House helps businesses build strong brands and scalable marketing systems.
-From brand identity, visual direction, marketing strategy and content. Designed to create a brand that attracts attention and grows.
-</p>
 
             <div className="mt-10">
               <button
