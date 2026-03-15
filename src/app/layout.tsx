@@ -4,9 +4,9 @@ import CustomCursor from "@/components/CustomCursor";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "High-Performance Ads | GTS Media House",
+  title: "Brand Development & Marketing Systems Built to Scale | GTS Media House",
   description:
-    "Strategic high-performing ad creative and strategy for brands. GTS Media House helps businesses scale social media ad campaigns with better strategy and better content.",
+    "GTS Media House helps businesses build strong brands and scalable marketing systems. From brand identity, visual direction, marketing strategy and content. Designed to create a brand that attracts attention and grows.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "High-Performance Ads | GTS Media House",
+    title: "Brand Development & Marketing Systems Built to Scale | GTS Media House",
     description:
-      "Strategic high-performing ad creative and strategy for brands. GTS Media House helps businesses scale social media ad campaigns with better strategy and better content.",
+      "GTS Media House helps businesses build strong brands and scalable marketing systems. From brand identity, visual direction, marketing strategy and content. Designed to create a brand that attracts attention and grows.",
     images: [
       {
         url: "/og-image.png",
