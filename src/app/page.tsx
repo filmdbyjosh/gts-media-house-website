@@ -55,15 +55,17 @@ export default function HomePage() {
             </p>
 
             <h1 className="text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
-              High-Performance
-              <br />
-              Ad Creative & Strategy
-            </h1>
+  Brand Development
+  <br />
+  & Marketing Systems
+  <br />
+  Built to Scale
+</h1>
 
-            <p className="mt-8 max-w-xl text-base leading-8 text-white/70 sm:text-lg">
-              Strategic high-performing ad creative and campaign strategy
-              designed to help brands scale social media advertising.
-            </p>
+<p className="mt-8 max-w-xl text-base leading-8 text-white/70 sm:text-lg">
+GTS Media House helps businesses build strong brands and scalable marketing systems.
+From brand identity, visual direction, marketing strategy and content. Designed to create a brand that attracts attention and grows.
+</p>
 
             <div className="mt-10">
               <button
