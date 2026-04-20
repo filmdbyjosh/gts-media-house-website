@@ -8,7 +8,6 @@ export default function Home() {
 
   return (
     <main className="relative h-screen overflow-hidden bg-black text-white">
-      {/* BACKGROUND GLOW */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[-10%] top-[30%] h-[320px] w-[320px] rounded-full bg-white/10 blur-[120px]" />
         <div className="absolute right-[-8%] top-[20%] h-[360px] w-[360px] rounded-full bg-[#00F0FF]/18 blur-[140px]" />
@@ -16,7 +15,6 @@ export default function Home() {
       </div>
 
       <div className="relative z-10 flex h-full flex-col">
-        {/* HERO VIDEO */}
         <section className="relative h-[28vh] w-full overflow-hidden">
           <video
             autoPlay
@@ -28,26 +26,11 @@ export default function Home() {
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
 
-<<<<<<< HEAD
-            <h1 className="text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
-  Brand Development
-  <br />
-  & Marketing Systems
-  <br />
-  Built to Scale
-</h1>
-
-=======
           <div className="absolute inset-0 bg-black/10" />
-
-          {/* Fade into black */}
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black" />
         </section>
->>>>>>> abf65ca (full site redesign + video hero + metadata update)
 
-        {/* MAIN CONTENT */}
         <section className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-          {/* SERVICES */}
           <div className="flex w-full max-w-6xl items-center justify-between gap-6 pb-12">
             <h2 className="text-sm font-light uppercase tracking-[0.35em] text-white/90 sm:text-base lg:text-xl">
               Brand Design
@@ -60,14 +43,12 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* LOGO */}
           <img
             src="/gts-main-logo.png"
             alt="GTS Media House"
             className="w-72 max-w-full pb-10 sm:w-80 lg:w-[30rem]"
           />
 
-          {/* CONTACT */}
           <div className="flex flex-col items-center">
             <h3 className="pb-3 text-xl font-light uppercase tracking-[0.28em] text-white/85 sm:text-2xl">
               Get in Touch
@@ -100,7 +81,6 @@ export default function Home() {
         </section>
       </div>
 
-      {/* MODAL */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 backdrop-blur-sm">
           <div className="w-full max-w-lg rounded-2xl border border-white/10 bg-black p-6 shadow-2xl">
@@ -114,7 +94,7 @@ export default function Home() {
                     const form = e.target as HTMLFormElement;
                     const data = new FormData(form);
 
-                    await fetch("/api/contact", {
+                    await fetch("/api/intake", {
                       method: "POST",
                       body: JSON.stringify({
                         name: data.get("name"),
@@ -178,25 +158,6 @@ export default function Home() {
           </div>
         </div>
       )}
-       <div className="mt-24 flex justify-center">
-        <a
-          href="https://instagram.com/gtsmediahouse"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="opacity-30 hover:opacity-100 transition"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5C18.54 4 20 5.46 20 7.75v8.5C20 18.54 18.54 20 16.25 20h-8.5C5.46 20 4 18.54 4 16.25v-8.5C4 5.46 5.46 4 7.75 4zm4.25 2.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm0 2a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm5.25-.75a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/>
-          </svg>
-        </a>
-      </div>
-
     </main>
   );
 }
