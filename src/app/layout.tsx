@@ -4,9 +4,9 @@ import CustomCursor from "@/components/CustomCursor";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Brand Development & Marketing Systems Built to Scale | GTS Media House",
+  title: "GTS Media House | Brand Design, Video Creation & Digital Marketing",
   description:
-    "GTS Media House helps businesses build strong brands and scalable marketing systems. From brand identity, visual direction, marketing strategy and content. Designed to create a brand that attracts attention and grows.",
+    "Brand design, video creation, and digital marketing built to help your business stand out and grow.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Brand Development & Marketing Systems Built to Scale | GTS Media House",
+    title: "GTS Media House | Brand Design, Video Creation & Digital Marketing",
     description:
-      "GTS Media House helps businesses build strong brands and scalable marketing systems. From brand identity, visual direction, marketing strategy and content. Designed to create a brand that attracts attention and grows.",
+      "Brand design, video creation, and digital marketing built to help your business stand out and grow.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "GTS Media House | Brand Development & Marketing Systems",
+        alt: "GTS Media House",
       },
     ],
     type: "website",
@@ -37,20 +37,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-brandBg text-white cursor-none">
-      <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "GTS Media House",
-      url: "https://gtsmediahouse.com",
-      sameAs: [
-        "https://instagram.com/gtsmediahouse"
-      ],
-    }),
-  }}
-/>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "GTS Media House",
+              url: "https://gtsmediahouse.com",
+              sameAs: ["https://instagram.com/gtsmediahouse"],
+            }),
+          }}
+        />
         <CustomCursor />
         {children}
         <Analytics />
