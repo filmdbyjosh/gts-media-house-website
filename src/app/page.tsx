@@ -7,15 +7,15 @@ export default function Home() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   return (
-    <main className="relative h-screen overflow-hidden bg-black text-white">
+    <main className="relative min-h-screen bg-black text-white">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[-10%] top-[30%] h-[320px] w-[320px] rounded-full bg-white/10 blur-[120px]" />
         <div className="absolute right-[-8%] top-[20%] h-[360px] w-[360px] rounded-full bg-[#00F0FF]/18 blur-[140px]" />
         <div className="absolute bottom-[-12%] left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-[#00C4CC]/12 blur-[140px]" />
       </div>
 
-      <div className="relative z-10 flex h-full flex-col">
-        <section className="relative h-[28vh] w-full overflow-hidden">
+      <div className="relative z-10 flex min-h-screen flex-col">
+        <section className="relative h-[32vh] w-full overflow-hidden">
           <video
             autoPlay
             muted
@@ -30,8 +30,8 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black" />
         </section>
 
-        <section className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-          <div className="flex w-full max-w-6xl items-center justify-between gap-6 pb-12">
+        <section className="flex flex-col items-center justify-center px-6 py-20 text-center">
+          <div className="flex w-full max-w-6xl flex-col items-center justify-center gap-6 pb-12 md:flex-row md:justify-between">
             <h2 className="text-sm font-light uppercase tracking-[0.35em] text-white/90 sm:text-base lg:text-xl">
               Brand Design
             </h2>
@@ -49,7 +49,7 @@ export default function Home() {
             className="w-72 max-w-full pb-10 sm:w-80 lg:w-[30rem]"
           />
 
-          <div className="flex flex-col items-center">
+          <div className="mt-12 flex flex-col items-center">
             <h3 className="pb-3 text-xl font-light uppercase tracking-[0.28em] text-white/85 sm:text-2xl">
               Get in Touch
             </h3>
@@ -66,7 +66,7 @@ export default function Home() {
               Email Us
             </button>
 
-            <div className="mt-5 flex items-center gap-3 text-sm tracking-[0.18em] text-white/75 sm:text-base">
+            <div className="mt-8 flex items-center gap-3 text-sm tracking-[0.18em] text-white/75 sm:text-base">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
