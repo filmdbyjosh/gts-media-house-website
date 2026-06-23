@@ -65,9 +65,9 @@ export default function CustomCursor() {
         width: size,
         height: size,
         borderRadius: "9999px",
-        backgroundColor: isLink ? "transparent" : "#00f0ff",
-        border: isLink ? "1px solid #00f0ff" : "none",
-        filter: "drop-shadow(0 0 6px #00f0ff)",
+        backgroundColor: isLink ? "transparent" : "#38B6FF",
+        border: isLink ? "1px solid #38B6FF" : "none",
+        filter: "drop-shadow(0 0 6px #38B6FF)",
 
       }}
       transition={{

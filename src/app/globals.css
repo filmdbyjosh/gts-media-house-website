@@ -18,7 +18,7 @@ body {
 }
 
 ::selection {
-  background: #00b8ff33;
+  background: #38b6ff33;
 }
 @keyframes lineFade {
   0% {
