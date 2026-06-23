@@ -32,9 +32,18 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col items-center justify-center px-6 py-20 text-center">
-          <p className="max-w-2xl pb-8 text-lg font-light leading-relaxed text-white/85 sm:text-xl lg:text-2xl">
-            Marketing assets built to help e-commerce brands scale.
-          </p>
+          <div className="relative mb-8 w-screen py-8">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,182,255,0.35)_0%,rgba(56,182,255,0.12)_45%,transparent_75%)] blur-2xl" />
+            <p
+              className="relative w-full whitespace-nowrap px-4 text-center text-[clamp(0.55rem,2.35vw,1.875rem)] font-light uppercase tracking-[0.14em] text-white"
+              style={{
+                textShadow:
+                  "0 0 24px rgba(56,182,255,0.55), 0 0 48px rgba(56,182,255,0.25)",
+              }}
+            >
+              Marketing assets built to help e-commerce brands scale.
+            </p>
+          </div>
 
           <button
             onClick={() => {
