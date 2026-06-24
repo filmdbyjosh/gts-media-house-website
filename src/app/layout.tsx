@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import { Analytics } from "@vercel/analytics/react";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "GTS Media House | Marketing Assets for E-Commerce Brands",
-  description:
-    "Marketing assets built to help e-commerce brands scale. Claim your free marketing audit from GTS Media House.",
+  title: `${site.name} | Digital Marketing Agency`,
+  description: site.description,
   icons: {
     icon: [
       { url: "/favicon.png", sizes: "32x32", type: "image/png" },
@@ -17,9 +17,8 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "GTS Media House | Marketing Assets for E-Commerce Brands",
-    description:
-      "Marketing assets built to help e-commerce brands scale. Claim your free marketing audit from GTS Media House.",
+    title: `${site.name} | Digital Marketing Agency`,
+    description: site.description,
     images: [
       {
         url: "/og-image.png",

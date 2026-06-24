@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { site } from "@/lib/site";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,17 +32,16 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black" />
         </section>
 
-        <section className="flex flex-col items-center justify-center px-6 py-20 text-center">
-          <div className="relative mb-8 w-screen py-8">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,182,255,0.35)_0%,rgba(56,182,255,0.12)_45%,transparent_75%)] blur-2xl" />
-            <p
-              className="relative w-full whitespace-nowrap px-4 text-center text-[clamp(0.55rem,2.35vw,1.875rem)] font-light uppercase tracking-[0.14em] text-white"
-              style={{
-                textShadow:
-                  "0 0 24px rgba(56,182,255,0.55), 0 0 48px rgba(56,182,255,0.25)",
-              }}
-            >
-              Marketing assets built to help e-commerce brands scale.
+        <section className="flex flex-col items-center px-6 pb-20 text-center">
+          <div className="-mt-24 mb-8 flex flex-col items-center gap-3 px-4 pt-24 text-center">
+            <h1 className="text-[clamp(2.25rem,7vw,4.5rem)] font-light uppercase leading-[1.05] tracking-[0.1em] text-white">
+              {site.hero.headline}
+            </h1>
+            <p className="text-[clamp(1rem,2.8vw,1.625rem)] font-light uppercase tracking-[0.16em] text-white/90">
+              {site.hero.subheadline}
+            </p>
+            <p className="max-w-2xl text-[clamp(0.8rem,1.5vw,1rem)] font-light leading-relaxed tracking-[0.04em] text-white/70">
+              {site.hero.specialties}
             </p>
           </div>
 
