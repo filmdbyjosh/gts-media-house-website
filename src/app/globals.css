@@ -1,10 +1,4 @@
-@font-face {
-  font-family: "Jumbox";
-  src: url("/fonts/Jumbox.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -14,52 +8,80 @@ body {
 }
 
 body {
-  @apply bg-brandBg text-textMain antialiased font-body;
+  @apply bg-brandBg font-body text-brandWhite antialiased;
 }
 
 ::selection {
   background: #38b6ff33;
 }
-@keyframes lineFade {
-  0% {
-    opacity: .15;
-  }
-  50% {
-    opacity: .45;
-  }
-  100% {
-    opacity: .15;
-  }
-}
 
-.animate-line-fade {
-  animation: lineFade 2.4s ease-in-out infinite;
-}
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typeCursorBlink {
-  0%,100% { border-color: rgba(148, 163, 184, 0);
-  }
-  50% {
-    border-color: rgba(148, 163, 184, 0.9);
-  }
-}
-
-.typewriter {
+/* Dyrdek-style emphasis stroke underline */
+.stroke-emphasis {
   display: inline-block;
+  position: relative;
   white-space: nowrap;
-  overflow: hidden;
-  border-right: 1px solid rgba(148, 163, 184, 0.9);
-  animation: typewriter 1.8s steps(32, end) 0.2s forwards,
-    typeCursorBlink 0.9s step-end infinite;
+}
 
-  /* NEW LINE: stops typing EXACTLY at the "?" */
-  max-width: 265px; 
+.stroke-emphasis::before {
+  content: "";
+  position: absolute;
+  bottom: -0.02em;
+  left: -0.18em;
+  right: -0.18em;
+  height: 0.42em;
+  background: url("/gts-stroke.svg") no-repeat bottom center;
+  background-size: 100% 0.35em;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stroke-emphasis.is-visible::before {
+  transform: scaleX(1);
+}
+
+/* btn-line animated underline + arrow */
+@layer components {
+  .btn-line {
+    @apply relative inline-flex items-center gap-2 bg-transparent pb-1 text-xs font-semibold uppercase tracking-[0.14em] text-brandWhite transition-opacity duration-300 hover:opacity-70;
+  }
+
+  .btn-line::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-0.5 w-full bg-brandWhite;
+  }
+
+  .btn-line-arrow {
+    @apply relative inline-block w-7 overflow-hidden;
+  }
+
+  .btn-line-arrow-inner {
+    @apply inline-block transition-transform duration-[400ms] ease-out;
+    transform: translateX(-12px);
+  }
+
+  .btn-line:hover .btn-line-arrow-inner {
+    transform: translateX(4px);
+  }
+
+  .nav-line-link {
+    @apply relative inline-block pb-1 font-body text-base font-semibold uppercase text-brandWhite transition-opacity duration-300 hover:opacity-70 md:text-lg;
+  }
+
+  .nav-line-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 bg-brandBlue transition-transform duration-300 ease-out;
+  }
+
+  .nav-line-link:hover::after {
+    @apply scale-x-100;
+  }
+
+  .list-row {
+    @apply border-b border-white/10 py-10 transition-colors duration-300 hover:bg-white/[0.02];
+  }
+
+  .form-line-input {
+    @apply w-full border-b border-white/20 bg-transparent py-3 font-body text-sm text-brandWhite outline-none transition-colors placeholder:text-white/35 focus:border-brandBlue;
+  }
 }

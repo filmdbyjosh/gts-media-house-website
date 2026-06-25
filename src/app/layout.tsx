@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
+import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/CustomCursor";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { site } from "@/lib/site";
+
+const display = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-display",
+});
+
+const body = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+});
 
 export const metadata: Metadata = {
   title: `${site.name} | Digital Marketing Agency`,
@@ -16,7 +28,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
     apple: "/apple-touch-icon.png",
   },
-
   openGraph: {
     title: `${site.name} | Digital Marketing Agency`,
     description: site.description,
@@ -38,8 +49,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-brandBg text-white cursor-none">
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -52,7 +63,6 @@ export default function RootLayout({
             }),
           }}
         />
-        <CustomCursor />
         {children}
         <Analytics />
         <SpeedInsights />
