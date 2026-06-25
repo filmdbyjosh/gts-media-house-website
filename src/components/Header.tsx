@@ -42,8 +42,11 @@ export default function Header({ onAuditClick }: HeaderProps) {
 
   return (
     <header className="border-b border-white/10 bg-brandBg">
-      <div className="mx-auto flex h-20 max-w-[1100px] items-center justify-between px-5 md:h-24 md:px-12">
-        <Link href="/" className="relative h-11 w-40 sm:h-12 sm:w-44 md:h-14 md:w-52">
+      <div className="mx-auto flex max-w-[1100px] items-center justify-between gap-4 px-5 py-5 md:px-12 md:py-8">
+        <Link
+          href="/"
+          className="relative block h-24 w-64 shrink-0 sm:h-28 sm:w-72 md:h-32 md:w-80"
+        >
           <Image
             src={site.logo}
             alt={site.name}
