@@ -24,9 +24,10 @@ export async function POST(req: Request) {
     };
 
     const heardAboutUs = referralLabels[referralSource] || referralSource;
+    const from = `${site.name} <${site.email}>`;
 
     const { error } = await resend.emails.send({
-      from: "GTS Media House <info@gtsmediahouse.com>",
+      from,
       to: [site.email],
       subject: "Marketing Audit Request | GTS Media House",
       html: `
@@ -48,8 +49,9 @@ export async function POST(req: Request) {
     }
 
     const { error: clientError } = await resend.emails.send({
-      from: "GTS Media House <info@gtsmediahouse.com>",
+      from,
       to: [email],
+      replyTo: site.email,
       subject: "Audit Request Received | GTS Media House",
       html: `
         <div style="background:#000000;padding:40px;font-family:Arial,Helvetica,sans-serif;color:#ffffff;">
