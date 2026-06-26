@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { site } from "@/lib/site";
 
 const resend = new Resend(process.env.RESEND_API_KEY || "");
 
@@ -26,7 +27,7 @@ export async function POST(req: Request) {
 
     const { error } = await resend.emails.send({
       from: "GTS Media House <info@gtsmediahouse.com>",
-      to: ["info@gtsmediahouse.com"],
+      to: [site.email],
       subject: "Marketing Audit Request | GTS Media House",
       html: `
         <h2>New Marketing Audit Request</h2>

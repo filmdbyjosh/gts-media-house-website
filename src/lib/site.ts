@@ -20,7 +20,7 @@ export const site = {
   description:
     "Digital marketing agency specializing in creative strategy, brand development, and lead generation. Claim your free marketing audit from GTS Media House.",
   url: "https://gtsmediahouse.com",
-  email: "info@gtsmediahouse.com",
+  email: "gtsmediahouse@gmail.com",
   logo: "/gts-main-logo.png",
   ogImage: "/og-image.png",
   social: {
