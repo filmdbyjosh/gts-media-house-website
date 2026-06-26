@@ -24,7 +24,11 @@ export async function POST(req: Request) {
     };
 
     const heardAboutUs = referralLabels[referralSource] || referralSource;
-    const from = `${site.name} <${site.email}>`;
+    // Resend only allows sending from a verified @gtsmediahouse.com address.
+    // Submissions are delivered to site.email (Gmail); replies go there too.
+    const sender =
+      process.env.RESEND_FROM_EMAIL || site.senderEmail;
+    const from = `${site.name} <${sender}>`;
 
     const { error } = await resend.emails.send({
       from,
