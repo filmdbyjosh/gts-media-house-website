@@ -21,11 +21,14 @@ export const site = {
     "Digital marketing agency specializing in creative strategy, brand development, and lead generation. Claim your free marketing audit from GTS Media House.",
   url: "https://gtsmediahouse.com",
   email: "gtsmediahouse@gmail.com",
+  phone: "520-667-3076",
   senderEmail: "info@gtsmediahouse.com",
   logo: "/gts-main-logo.png",
   ogImage: "/og-image.png",
   social: {
     instagram: "https://instagram.com/gtsmediahouse",
+    facebook: "https://facebook.com/gtsmediahouse",
+    linkedin: "https://www.linkedin.com/company/gts-media-house",
     googleReviews: "https://share.google/mPXfcOUWZKjJcPpUy",
   },
   reviews: {
@@ -33,6 +36,9 @@ export const site = {
     count: 11,
     featuredQuote:
       "They know ads! Our reach exploded and our business is booming! 🚀",
+  },
+  websiteCta: {
+    label: "Need a website?",
   },
   nav: [
     { label: "Process", href: "/#process" },

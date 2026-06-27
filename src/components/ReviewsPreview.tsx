@@ -1,4 +1,7 @@
+"use client";
+
 import LineButton from "@/components/LineButton";
+import { AnimReveal, AnimScale, AnimText } from "@/components/AnimFadeBox";
 import { site } from "@/lib/site";
 
 function GoogleIcon({ className = "h-5 w-5" }: { className?: string }) {
@@ -52,34 +55,41 @@ function StarRating() {
 
 export default function ReviewsPreview() {
   return (
-    <div className="list-row border-b-0 pb-12">
-      <div className="mx-auto max-w-[1100px] px-5 md:px-12">
-        <article className="max-w-xl border border-white/10 bg-white/[0.02] p-8 md:p-10">
-          <div className="mb-6 flex items-center gap-2">
-            <StarRating />
-            <span className="font-body text-sm font-semibold text-brandWhite">
-              {site.reviews.rating.toFixed(1)}
-            </span>
-          </div>
+    <AnimReveal>
+      <div className="list-row border-b-0 pb-12">
+        <div className="mx-auto max-w-[1100px] px-5 md:px-12">
+          <AnimScale>
+            <article className="max-w-xl border border-white/10 bg-white/[0.02] p-8 md:p-10">
+              <div className="mb-6 flex items-center gap-2">
+                <StarRating />
+                <span className="font-body text-sm font-semibold text-brandWhite">
+                  {site.reviews.rating.toFixed(1)}
+                </span>
+              </div>
 
-          <blockquote className="font-body text-base leading-relaxed text-white/85 italic md:text-lg">
-            &ldquo;{site.reviews.featuredQuote}&rdquo;
-          </blockquote>
-        </article>
+              <blockquote className="font-body text-base leading-relaxed text-white/85 italic md:text-lg">
+                &ldquo;{site.reviews.featuredQuote}&rdquo;
+              </blockquote>
+            </article>
+          </AnimScale>
 
-        <div className="mt-8 flex max-w-xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
-            <GoogleIcon />
-            <p className="font-body text-xs uppercase tracking-[0.16em] text-textMuted">
-              Google Reviews
-            </p>
-          </div>
+          <AnimText
+            className="mt-8 flex max-w-xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+            delay={0.3}
+          >
+            <div className="flex items-center gap-3">
+              <GoogleIcon />
+              <p className="font-body text-xs uppercase tracking-[0.16em] text-textMuted">
+                Google Reviews
+              </p>
+            </div>
 
-          <LineButton href={site.social.googleReviews}>
-            See all reviews
-          </LineButton>
+            <LineButton href={site.social.googleReviews}>
+              See all reviews
+            </LineButton>
+          </AnimText>
         </div>
       </div>
-    </div>
+    </AnimReveal>
   );
 }

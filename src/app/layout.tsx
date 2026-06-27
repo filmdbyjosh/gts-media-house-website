@@ -3,6 +3,7 @@ import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import SiteChrome from "@/components/SiteChrome";
 import { site } from "@/lib/site";
 
 const display = Barlow_Condensed({
@@ -51,6 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
+        <SiteChrome />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

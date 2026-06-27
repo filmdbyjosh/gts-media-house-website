@@ -11,6 +11,37 @@ body {
   @apply bg-brandBg font-body text-brandWhite antialiased;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  blockquote {
+    cursor: default;
+  }
+
+  a,
+  a *,
+  button:not(:disabled),
+  button:not(:disabled) *,
+  [role="button"],
+  [role="button"] *,
+  .btn-line,
+  .btn-line *,
+  .nav-line-link,
+  .nav-line-link *,
+  label[for],
+  summary {
+    cursor: pointer;
+  }
+}
+
 ::selection {
   background: #38b6ff33;
 }
@@ -25,15 +56,15 @@ body {
 .stroke-emphasis::before {
   content: "";
   position: absolute;
-  bottom: -0.02em;
-  left: -0.18em;
-  right: -0.18em;
-  height: 0.42em;
-  background: url("/gts-stroke.svg") no-repeat bottom center;
-  background-size: 100% 0.35em;
+  bottom: -0.1em;
+  left: -0.28em;
+  right: -0.28em;
+  height: 0.62em;
+  background: url("/gts-stroke.svg") no-repeat center bottom;
+  background-size: 108% 100%;
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .stroke-emphasis.is-visible::before {

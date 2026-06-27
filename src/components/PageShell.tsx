@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimText } from "@/components/AnimFadeBox";
 import AuditModal from "@/components/AuditModal";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -19,14 +20,14 @@ export function PageShell({ lines, subtitle, children }: PageShellProps) {
   return (
     <>
       <Header onAuditClick={() => setAuditOpen(true)} />
-      <main className="min-h-screen bg-brandBg">
+      <main className="relative z-10 min-h-screen bg-brandBg">
         <section className="border-b border-white/10">
           <div className="mx-auto max-w-[1100px] px-5 py-16 md:px-12 md:py-20">
             <StrokeTitle lines={lines} />
             {subtitle && (
-              <p className="mt-8 max-w-2xl font-body text-base leading-relaxed text-textMuted md:text-lg">
+              <AnimText className="mt-8 max-w-2xl font-body text-base leading-relaxed text-textMuted md:text-lg" delay={0.7}>
                 {subtitle}
-              </p>
+              </AnimText>
             )}
           </div>
         </section>
