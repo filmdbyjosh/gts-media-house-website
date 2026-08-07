@@ -1,4 +1,6 @@
 export const site = {
+  /** When true, site-wide contact lockdown overlay is shown over all pages. */
+  lockdown: true,
   name: "GTS Media House",
   hero: {
     lines: [
