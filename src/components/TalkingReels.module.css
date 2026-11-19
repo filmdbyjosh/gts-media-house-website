@@ -1,0 +1,141 @@
+.stage {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: min(100%, 520px);
+  height: 440px;
+  margin-inline: auto;
+}
+
+.column {
+  width: min(100%, 240px);
+  height: 100%;
+}
+
+.side {
+  display: none;
+}
+
+.window {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #100e0c;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  mask-image: linear-gradient(180deg, transparent, #000 9%, #000 91%, transparent);
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  animation: scrollReels 22s linear infinite;
+  will-change: transform;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 12px;
+}
+
+.frame {
+  position: relative;
+  flex: 0 0 320px;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #161412;
+}
+
+.frame.close {
+  flex-basis: 300px;
+  height: 300px;
+}
+
+.frame.mid {
+  flex-basis: 360px;
+  height: 360px;
+}
+
+.frame.full {
+  flex-basis: 430px;
+  height: 430px;
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.frame.close img {
+  object-position: center 42%;
+}
+
+.frame.mid img {
+  object-position: center 22%;
+}
+
+.captions {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  gap: 6px;
+  padding: 36px 14px 14px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.62));
+}
+
+.captions i {
+  display: block;
+  height: 6px;
+  width: 76%;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.captions i:last-child {
+  width: 48%;
+  opacity: 0.75;
+}
+
+@keyframes scrollReels {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stage {
+    grid-template-columns: 0.82fr 1fr 0.82fr;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    height: 480px;
+    margin-inline: 0;
+    justify-self: end;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .side {
+    display: block;
+    height: 86%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feed {
+    animation: none;
+  }
+}

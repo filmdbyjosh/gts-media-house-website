@@ -1,31 +1,218 @@
 export const site = {
   /** When true, site-wide contact lockdown overlay is shown over all pages. */
-  lockdown: true,
+  lockdown: false,
   name: "GTS Media House",
+  legalName: "GTS Media House",
+  metaTitle: "Done-for-you content production | GTS Media House",
+  tagline: "Everything media. One house.",
+  platformDescription:
+    "GTS Media House is a full-service media company specializing in video editing, content repurposing, social media content, graphic design, branding, website design, and digital marketing. We provide clear communication, regular updates, no guessing where your project stands, and delivery you can count on.",
   hero: {
-    lines: [
-      { before: "DIGITAL ", emphasis: "MARKETING" },
-      { before: "FOR BRANDS ", emphasis: "READY TO SCALE" },
-    ],
+    eyebrow: "Full-service media company",
+    headline: "Everything media.\nOne house.",
+    pitch:
+      "Creative, design, marketing, web, and video — clear communication, reliable delivery, and quality without compromise.",
+    cta: "Let’s connect",
+    ctaHref: "/#connect",
+  },
+  values: [
+    {
+      title: "Clear communication",
+      body: "Fast responses, clear updates, and no guessing where your project stands.",
+    },
+    {
+      title: "Reliable delivery",
+      body: "Clear expectations, defined timelines, and delivery you can count on.",
+    },
+    {
+      title: "Quality without compromise",
+      body: "Every project is handled with care, attention to detail, and a standard we’re proud to stand behind.",
+    },
+  ] as const,
+  services: {
+    title: "What we do",
+    categories: [
+      {
+        title: "Creative",
+        items: [
+          "Creative direction",
+          "Campaign concepts",
+          "Script writing",
+          "Storyboarding",
+          "Content planning",
+          "Creative strategy",
+          "Ad creative",
+          "Content repurposing",
+        ],
+      },
+      {
+        title: "Design",
+        items: [
+          "Graphic design",
+          "Logo design",
+          "Brand identity",
+          "Social media graphics",
+          "Ad design",
+          "Thumbnails",
+          "Posters / flyers",
+          "Marketing materials",
+        ],
+      },
+      {
+        title: "Marketing",
+        items: [
+          "Marketing campaigns",
+          "Digital advertising",
+          "Social media marketing",
+          "Content marketing",
+          "Campaign strategy",
+          "Creative strategy",
+          "Lead generation",
+          "Brand development",
+          "Marketing audits",
+        ],
+      },
+      {
+        title: "Web",
+        items: [
+          "Website design",
+          "Landing pages",
+          "Website refreshes",
+          "Portfolio websites",
+          "Lead generation pages",
+          "Website graphics / assets",
+        ],
+      },
+      {
+        title: "Videography",
+        items: [
+          "Videography",
+          "Social media video",
+          "Commercial / branded content",
+          "Interviews",
+          "Event coverage",
+          "Action sports production",
+          "Aerial videography",
+        ],
+      },
+      {
+        title: "Video editing",
+        items: [
+          "Video editing",
+          "Color grading",
+          "Audio editing / mixing",
+          "Motion graphics",
+          "Content repurposing",
+        ],
+      },
+    ] as const,
+  },
+  stats: {
+    experience: "10+ years experience",
+    projects: "100+ projects",
+    disciplines: "Creative · Design · Marketing · Web · Video",
+  },
+  testimonials: {
+    title: "What our clients have said",
+    items: [
+      {
+        quote:
+          "GTS created exactly what I was looking for. The attention to detail was incredible, and the final design turned out even better than I imagined.",
+        name: "D.",
+      },
+      {
+        quote:
+          "GTS completely elevated our ad creative. After launching the new content, we saw stronger engagement and more conversions. They gave us exactly what we needed to improve our campaigns.",
+        name: "R.",
+      },
+      {
+        quote:
+          "We’ve worked with GTS on multiple projects and have been impressed every time. They bring a strong vision to the work and consistently create content that makes our brand look better.",
+        name: "D.",
+      },
+      {
+        quote:
+          "The combination of strategy and creative completely changed our advertising. Our campaigns performed significantly better after working with GTS.",
+        name: "V.",
+      },
+      {
+        quote:
+          "GTS knows how to take an idea and turn it into something that looks professional. If you want content that makes your business stand out, this is the team.",
+        name: "B.",
+      },
+      {
+        quote:
+          "Great communication from start to finish. They showed up early, delivered everything on time, and the final work exceeded our expectations. Professional, talented, and easy to work with.",
+        name: "P.",
+      },
+      {
+        quote:
+          "The strategy and content GTS created helped us reach millions of people online and bring in a huge number of new clients.",
+        name: "R.",
+      },
+      {
+        quote:
+          "Professional, passionate, and reliable. GTS knows how to create promotional content that actually helps your business, and they made the entire process easy.",
+        name: "T.",
+      },
+      {
+        quote:
+          "We’ve worked with GTS for years. They consistently bring great ideas to the table, communicate well, and handle every project professionally.",
+        name: "M.",
+      },
+      {
+        quote:
+          "GTS understands advertising. Their strategy and content dramatically increased our reach and helped drive real growth for our business.",
+        name: "L.",
+      },
+      {
+        quote:
+          "We’ve been creating content together for years. The work is consistently great, and GTS has always been easy and professional to work with.",
+        name: "C.",
+      },
+    ] as const,
+  },
+  finalCta: {
+    title: "Ready to start a project?",
+    cta: "Let’s connect",
+    ctaHref: "/#connect",
   },
   about: {
+    pageTitle: "About GTS",
+    whatWeDoTitle: "What we do",
+    whatWeDo:
+      "GTS Media House is a full-service media company. We handle creative, design, marketing, web, videography, and video editing — with clear communication and delivery you can count on.",
+    originTitle: "How it started",
+    origin:
+      "GTS Media House started as Get The Shot. The name changed. The standard didn’t. One house for everything media.",
+    hero: {
+      lines: [
+        { before: "GTS ", emphasis: "MEDIA HOUSE" },
+        { before: "EVERYTHING MEDIA. ", emphasis: "ONE HOUSE." },
+      ],
+      subtitle:
+        "A full-service media company for brands that want clear communication and reliable delivery.",
+    },
     paragraphs: [
-      "I started GTS Media House, short for Get The Shot Media House, after working through nearly every role inside digital marketing.",
-      "I've been the photographer, videographer, editor, content strategist, creative director, social media manager, brand builder, ad creative thinker, and marketing system developer. I've seen how every part connects, and that gave me a clear advantage.",
-      "Most agencies only understand one piece. They make content. They run ads. They design logos. They post on social. GTS was built because I knew brands needed more than disconnected services.",
-      "GTS Media House develops complete brand systems. We connect brand identity, visuals, content, and marketing into one clear direction. The goal is not just to make a brand look good. The goal is to make it look premium, capture attention, and turn that attention into customers.",
-      "I built GTS for businesses that want more than random content. They want sharper visuals, stronger messaging, better brand presence, and marketing systems built to scale.",
-      "That's what we do.",
-      "We build brands people notice.",
+      "GTS Media House is a full-service media company specializing in creative, design, marketing, web, videography, and video editing.",
+      "We provide clear communication, regular updates, and delivery you can count on.",
     ],
   },
   description:
-    "Digital marketing agency specializing in creative strategy, brand development, and lead generation. Claim your free marketing audit from GTS Media House.",
+    "We build custom content production systems for businesses looking to scale their social media presence.",
   url: "https://gtsmediahouse.com",
   email: "gtsmediahouse@gmail.com",
   phone: "520-667-3076",
   senderEmail: "info@gtsmediahouse.com",
-  logo: "/gts-main-logo.png",
+  logo: "/logo-gts-mh-dark.png",
+  logoMark: "/logo-gts-mh-dark.png",
+  logoWordmark: "/logo-gts-mh-dark.png",
+  logoDark: "/logo-gts-mh-dark.png",
+  logoLight: "/logo-gts-mh.png",
+  media: {
+    heroVideo: "/hero-video.mp4",
+    tiles: [] as const,
+  },
   ogImage: "/og-image.png",
   social: {
     instagram: "https://instagram.com/gtsmediahouse",
@@ -36,42 +223,24 @@ export const site = {
   reviews: {
     rating: 5.0,
     count: 11,
-    featuredQuote:
-      "They know ads! Our reach exploded and our business is booming! 🚀",
-  },
-  websiteCta: {
-    label: "Need a website?",
   },
   nav: [
-    { label: "Process", href: "/#process" },
+    { label: "Work", href: "/#services" },
     { label: "About", href: "/about" },
-    { label: "Reviews", href: "/#reviews" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact", href: "/#connect" },
   ] as const,
-  process: [
-    {
-      step: "01",
-      title: "Audit",
-      description:
-        "We analyze your marketing, funnel, tracking, and competitive landscape to find the gaps.",
-    },
-    {
-      step: "02",
-      title: "Strategy",
-      description:
-        "We map channels, positioning, creative angles, and campaign structure.",
-    },
-    {
-      step: "03",
-      title: "Launch",
-      description:
-        "We build and deploy campaigns across platforms with creative ready to run.",
-    },
-    {
-      step: "04",
-      title: "Optimize",
-      description:
-        "We test, refine, and scale winners while cutting what doesn't perform.",
-    },
-  ],
+  quote: {
+    mediaHosts: [
+      { label: "Google Drive", href: "https://drive.google.com" },
+      { label: "Dropbox", href: "https://www.dropbox.com" },
+      { label: "Frame.io", href: "https://app.frame.io" },
+    ] as const,
+    mediaHint:
+      "Upload your footage to one of these, then paste the share link above.",
+    submitHint:
+      "When you’re ready, click submit and we’ll get you your free quote.",
+    confirmationTitle: "Your request is being reviewed",
+    confirmationBody:
+      "We’ll review your footage link and send you a free quote before any work begins.",
+  },
 } as const;

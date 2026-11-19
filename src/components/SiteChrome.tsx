@@ -1,18 +1,18 @@
 "use client";
 
-import AnimGridLines from "@/components/AnimGridLines";
-import CustomCursor from "@/components/CustomCursor";
+import ApplicationModal from "@/components/ApplicationModal";
 import LockdownOverlay from "@/components/LockdownOverlay";
-import ScrollDown from "@/components/ScrollDown";
 import { site } from "@/lib/site";
+import { usePathname } from "next/navigation";
 
 export default function SiteChrome() {
-  return (
-    <>
-      <CustomCursor />
-      <AnimGridLines />
-      <ScrollDown />
-      {site.lockdown ? <LockdownOverlay /> : null}
-    </>
-  );
+  const pathname = usePathname() ?? "";
+  const isCheckoutSandbox =
+    pathname === "/checkout" || pathname.startsWith("/checkout/");
+
+  if (site.lockdown && !isCheckoutSandbox) {
+    return <LockdownOverlay />;
+  }
+
+  return <ApplicationModal />;
 }

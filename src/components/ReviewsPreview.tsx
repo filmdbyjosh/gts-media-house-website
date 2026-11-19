@@ -67,9 +67,10 @@ export default function ReviewsPreview() {
                 </span>
               </div>
 
-              <blockquote className="font-body text-base leading-relaxed text-white/85 italic md:text-lg">
-                &ldquo;{site.reviews.featuredQuote}&rdquo;
-              </blockquote>
+              <p className="font-body text-base leading-relaxed text-white/85 md:text-lg">
+                {site.reviews.rating.toFixed(1)} on Google · {site.reviews.count}{" "}
+                reviews
+              </p>
             </article>
           </AnimScale>
 

@@ -1,72 +1,61 @@
-import Image from "next/image";
-import Link from "next/link";
 import { site } from "@/lib/site";
 
-export default function Footer() {
-  return (
-    <footer className="border-t border-white/10 bg-brandBg">
-      <div className="mx-auto max-w-[1100px] px-5 py-14 md:px-12">
-        <div className="grid gap-12 md:grid-cols-3 md:items-start">
-          <Link
-            href="/"
-            className="relative block h-24 w-64 sm:h-28 sm:w-72 md:h-32 md:w-80"
-          >
-            <Image
-              src={site.logo}
-              alt={site.name}
-              fill
-              className="object-contain object-left"
-            />
-          </Link>
+const social = [
+  { label: "Instagram", href: site.social.instagram },
+  { label: "Facebook", href: site.social.facebook },
+  { label: "LinkedIn", href: site.social.linkedin },
+] as const;
 
-          <nav className="flex flex-col gap-3">
-            {site.nav.map((item) =>
-              "external" in item && item.external ? (
+export default function Footer() {
+  const phoneHref = `tel:${site.phone.replace(/\D/g, "")}`;
+
+  return (
+    <footer className="border-t border-white/[0.08] bg-[#0c0b0a]">
+      <div className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-8">
+        <h2 className="sr-only">Footer</h2>
+        <div className="grid gap-12 sm:grid-cols-3 sm:gap-10">
+          <div>
+            <p className="text-sm font-medium text-white">{site.name}</p>
+            <p className="mt-3 text-sm leading-6 text-stone-500">
+              10+ years in content production.
+            </p>
+          </div>
+          <div>
+            <p className="text-lg font-medium tracking-tight text-white">
+              Based in Arizona.
+            </p>
+            <p className="mt-3 max-w-xs text-sm leading-6 text-stone-500">
+              We work with brands across the country.
+            </p>
+            <p className="mt-3 text-sm leading-6 text-stone-500">
+              Phone:{" "}
+              <a
+                href={phoneHref}
+                className="text-white transition-colors duration-200 hover:text-stone-300"
+              >
+                {site.phone}
+              </a>
+            </p>
+          </div>
+          <div>
+            <nav aria-label="Social" className="flex flex-col gap-2">
+              {social.map((item) => (
                 <a
-                  key={item.href}
+                  key={item.label}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="nav-line-link w-fit text-sm"
+                  className="text-sm text-stone-500 transition-colors duration-200 hover:text-white"
                 >
                   {item.label}
                 </a>
-              ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="nav-line-link w-fit text-sm"
-                >
-                  {item.label}
-                </Link>
-              ),
-            )}
-          </nav>
-
-          <div className="flex flex-col gap-3 font-body text-sm text-textMuted">
-            <a
-              href={site.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-line-link w-fit text-sm text-textMuted hover:text-brandWhite"
-            >
-              Instagram
-            </a>
-            <a
-              href={`mailto:${site.email}`}
-              className="nav-line-link w-fit text-sm text-textMuted hover:text-brandWhite"
-            >
-              {site.email}
-            </a>
+              ))}
+            </nav>
           </div>
         </div>
-
-        <div className="relative mt-14 pt-8">
-          <div className="absolute left-0 top-0 h-px w-full max-w-md bg-white/15" />
-          <p className="font-body text-xs text-white/35">
-            © {new Date().getFullYear()} {site.name}
-          </p>
-        </div>
+        <p className="mt-14 border-t border-white/[0.08] pt-6 text-xs text-stone-500">
+          © {new Date().getFullYear()} {site.legalName}
+        </p>
       </div>
     </footer>
   );

@@ -1,25 +1,21 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, DM_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteChrome from "@/components/SiteChrome";
 import { site } from "@/lib/site";
 
-const display = Barlow_Condensed({
+const sans = Inter({
   subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-display",
-});
-
-const body = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-body",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-form",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: `${site.name} | Digital Marketing Agency`,
+  metadataBase: new URL(site.url),
+  title: site.metaTitle,
   description: site.description,
   icons: {
     icon: [
@@ -30,17 +26,22 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: `${site.name} | Digital Marketing Agency`,
+    title: site.metaTitle,
     description: site.description,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "GTS Media House",
+        alt: site.name,
       },
     ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.metaTitle,
+    description: site.description,
   },
 };
 
@@ -50,18 +51,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body>
+    <html lang="en" className={sans.variable}>
+      <body className="bg-[#0c0b0a] text-white antialiased">
         <SiteChrome />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "GTS Media House",
-              url: "https://gtsmediahouse.com",
-              sameAs: ["https://instagram.com/gtsmediahouse"],
+              "@type": "ProfessionalService",
+              name: site.legalName,
+              description: site.description,
+              url: site.url,
+              sameAs: [
+                site.social.instagram,
+                site.social.facebook,
+                site.social.linkedin,
+              ],
             }),
           }}
         />

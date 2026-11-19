@@ -35,7 +35,7 @@ export default function StrokeTitle({ lines }: StrokeTitleProps) {
   return (
     <h1
       ref={ref}
-      className="font-display text-[clamp(2.75rem,7.5vw,5.5rem)] font-bold uppercase leading-[0.82] tracking-tight text-brandWhite"
+      className="font-body text-[clamp(2.2rem,6vw,4.4rem)] font-semibold uppercase leading-[0.95] tracking-[0.04em] text-brandBlack"
     >
       {lines.map((line, lineIndex) => {
         const beforeDelay = lineIndex * 0.18;

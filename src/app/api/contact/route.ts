@@ -4,31 +4,54 @@ import { site } from "@/lib/site";
 
 const resend = new Resend(process.env.RESEND_API_KEY || "");
 
+function escapeHtml(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, message } = await req.json();
+    const { name, email, phone, preferredContact, message } = await req.json();
 
-    if (!name || !email || !message) {
+    if (!name || !email || !phone || !message) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
       );
     }
 
+    const preferred = String(preferredContact || "").trim();
+    if (!preferred) {
+      return NextResponse.json(
+        { error: "Preferred contact method required" },
+        { status: 400 }
+      );
+    }
+
     const sender = process.env.RESEND_FROM_EMAIL || site.senderEmail;
     const from = `${site.name} <${sender}>`;
-    const phoneNote = phone?.trim() || "Not provided";
-    const messageNote = String(message).trim();
+    const nameNote = escapeHtml(String(name).trim());
+    const emailNote = escapeHtml(String(email).trim());
+    const phoneNote = escapeHtml(String(phone).trim());
+    const preferredNote = escapeHtml(preferred);
+    const messageNote = escapeHtml(String(message).trim()).replaceAll(
+      "\n",
+      "<br/>"
+    );
 
     const { error } = await resend.emails.send({
       from,
       to: [site.email],
-      subject: "Contact Inquiry | GTS Media House",
+      subject: `Get in touch | ${site.name}`,
       html: `
-        <h2>New Contact Inquiry</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
+        <h2>New message</h2>
+        <p><strong>Name:</strong> ${nameNote}</p>
+        <p><strong>Email:</strong> ${emailNote}</p>
         <p><strong>Phone:</strong> ${phoneNote}</p>
+        <p><strong>Preferred contact:</strong> ${preferredNote}</p>
         <p><strong>Message:</strong></p>
         <p>${messageNote}</p>
       `,
@@ -44,15 +67,14 @@ export async function POST(req: Request) {
       from,
       to: [email],
       replyTo: site.email,
-      subject: "Message Received | GTS Media House",
+      subject: `Message received | ${site.name}`,
       html: `
         <div style="background:#000000;padding:40px;font-family:Arial,Helvetica,sans-serif;color:#ffffff;">
           <div style="max-width:600px;margin:auto;text-align:center;">
-            <h1 style="color:#38B6FF;margin-bottom:20px;">We got your message</h1>
+            <h1 style="color:#ffffff;margin-bottom:20px;">We got your message</h1>
             <p style="font-size:16px;line-height:1.6;color:#dddddd;">
-              Hey ${name}, thanks for reaching out to GTS Media House. We'll follow up shortly.
+              Hey ${nameNote}, thanks for reaching out to ${site.name}. We’ll get back to you with a free quote.
             </p>
-            <p style="margin-top:40px;color:#888;">— GTS Media House</p>
           </div>
         </div>
       `,

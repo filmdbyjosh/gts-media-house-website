@@ -1,0 +1,68 @@
+.card {
+  display: grid;
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field span {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #d6d3d1;
+}
+
+.field input {
+  width: 100%;
+  height: 2.85rem;
+  padding: 0 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: #2a2623;
+  color: #ffffff;
+  font: inherit;
+  font-size: 16px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.55);
+  background: #332e2b;
+}
+
+.field input:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff;
+  caret-color: #ffffff;
+  box-shadow: 0 0 0 1000px #2a2623 inset;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 0.35rem;
+}
+
+.error {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fca5a5;
+}
+
+.thanksTitle {
+  margin: 0.25rem 0 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.thanksBody {
+  margin: 0 0 0.25rem;
+  color: #d6d3d1;
+  line-height: 1.5;
+}
