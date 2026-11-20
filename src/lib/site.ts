@@ -200,7 +200,7 @@ export const site = {
   },
   description:
     "We build custom content production systems for businesses looking to scale their social media presence.",
-  url: "https://gtsmediahouse.com",
+  url: "https://www.gtsmediahouse.com",
   email: "gtsmediahouse@gmail.com",
   phone: "520-667-3076",
   senderEmail: "info@gtsmediahouse.com",

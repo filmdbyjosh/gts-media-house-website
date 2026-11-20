@@ -15,8 +15,14 @@ const sans = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: site.metaTitle,
+  title: {
+    default: site.metaTitle,
+    template: "%s",
+  },
   description: site.description,
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/favicon.png", sizes: "32x32", type: "image/png" },
@@ -28,6 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: site.metaTitle,
     description: site.description,
+    url: site.url,
     images: [
       {
         url: "/og-image.png",
@@ -59,15 +66,32 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              name: site.legalName,
+              "@type": "WebPage",
+              name: "Done-for-you content production",
               description: site.description,
               url: site.url,
-              sameAs: [
-                site.social.instagram,
-                site.social.facebook,
-                site.social.linkedin,
-              ],
+              isPartOf: {
+                "@type": "WebSite",
+                name: site.legalName,
+                url: site.url,
+              },
+              about: {
+                "@type": "ProfessionalService",
+                name: site.legalName,
+                description: site.description,
+                url: site.url,
+                telephone: site.phone,
+                address: {
+                  "@type": "PostalAddress",
+                  addressRegion: "AZ",
+                  addressCountry: "US",
+                },
+                sameAs: [
+                  site.social.instagram,
+                  site.social.facebook,
+                  site.social.linkedin,
+                ],
+              },
             }),
           }}
         />

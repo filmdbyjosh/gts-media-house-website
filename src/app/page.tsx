@@ -16,7 +16,9 @@ import {
 } from "@/components/SiteIcons";
 
 export const metadata: Metadata = {
-  title: "Done-for-you content production | GTS Media House",
+  title: {
+    absolute: "Done-for-you content production | GTS Media House",
+  },
   description:
     "We build custom content production systems for businesses looking to scale their social media presence.",
 };
